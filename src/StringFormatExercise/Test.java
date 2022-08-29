@@ -1,13 +1,8 @@
+package StringFormatExercise;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
 
-public class AMainMethod {
-	
-	final static int Y = 10;
-	final static int X = 20;
+public class Test {
 
 	public static void main(String[] args) {
 		String sampleInput = "Hello World How Are You";
@@ -20,7 +15,8 @@ public class AMainMethod {
 		// Y : You
 	}
 	
-	private static LinkedHashMap<Character, ArrayList<String>> formatTheInput(String in) {
+	private static String formatTheInput(String in) {
+		String out = "";
 		String[] strSplit = in.split(" ");
 		LinkedHashMap<Character, ArrayList<String>> map = new LinkedHashMap<Character, ArrayList<String>>();
 		
@@ -29,16 +25,18 @@ public class AMainMethod {
 			map.putIfAbsent(ch, new ArrayList<String>());
 			map.get(ch).add(obj);
 		}
-		return map;
-	}
-
-	private static void display(LinkedHashMap<Character, ArrayList<String>> in) {
-		for (Character charKey: in.keySet()) {
+		
+		for (Character charKey: map.keySet()) {
 			String item = "";
-			for(String str: in.get(charKey)) {
+			for(String str: map.get(charKey)) {
 				item += str + " ";
 			}
-			System.out.println(charKey + " : " + item);
+			out += charKey + " : " + item + "\n";
 		}
+		return out;
+	}
+
+	private static void display(String in) {
+		System.out.println(in);
 	}
 }
