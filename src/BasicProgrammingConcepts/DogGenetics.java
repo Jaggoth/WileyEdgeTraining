@@ -44,12 +44,12 @@ public class DogGenetics {
 		int[] rndNumbers = {RND.nextInt(1000),RND.nextInt(1000),RND.nextInt(1000),RND.nextInt(1000),RND.nextInt(1000)};
 		
 		
-		
-		double rndNumberSum = 0;
+		//to get a list of numbers to add up to 100
+		double rndNumberSum = 0;//we first get the sum of the random number
 		for (double number : rndNumbers) {
 			rndNumberSum += number;
 		}
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 5; i++) {//then divide each number by the sum and multiply by 100
 			rndNumbers[i] = (int) ((rndNumbers[i] / rndNumberSum) * 100);
 		}
 		
@@ -58,13 +58,13 @@ public class DogGenetics {
 		int convertedSum = 0;
 		for (int number : rndNumbers) {
 			convertedSum += number;
-		}
+		}//the new sum will be a bit off due to rounding errors using int
 		
 		
 		
 		if ((100 - convertedSum) != 0) {
 			rndNumbers[4] += 100 - convertedSum;
-		}
+		}//offset the rounding error by adding the missing parts to the last breed
 
 		
 		
