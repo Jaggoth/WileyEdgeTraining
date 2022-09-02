@@ -1,4 +1,4 @@
-package SummativeSums;
+package BasicProgrammingConcepts;
 
 public class SummativeSums {
 

@@ -1,4 +1,4 @@
-package DogGenetics;
+package BasicProgrammingConcepts;
 
 import java.util.Scanner;
 import java.util.ArrayList;

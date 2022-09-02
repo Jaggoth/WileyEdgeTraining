@@ -1,4 +1,4 @@
-package HealthyHearts;
+package BasicProgrammingConcepts;
 
 import java.util.Scanner;
 
